@@ -1514,7 +1514,7 @@
     <div
       id="sc-blog"
       class="sc-blog main-home pb-200 pt-120 md-pt-70 md-pb-160 eventos-container"
-      v-if="this.carrera_id == 0"
+      v-if="this.carrera_id == 3"
     >
       <div class="container">
         <div class="sec-title mb-60 text-center md-mb-30">
@@ -1754,7 +1754,7 @@
     <div
       id="sc-blog"
       class="sc-blog main-home pb-200 pt-120 md-pt-70 md-pb-160 publicaciones-content"
-      v-if="this.carrera_id == 0"
+      v-if="this.carrera_id == 3"
     >
       <div class="container">
         <div class="sec-title mb-60 text-center md-mb-30">
