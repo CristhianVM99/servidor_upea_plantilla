@@ -95,7 +95,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: conv.tipo_conv_comun.tipo_conv_comun_titulo.toLowerCase(),
-                                      idconv: conv.idconvocatorias
+                                      idconv: encryptID(conv.idconvocatorias)
                                     }
                                   }"
                                   class="btn-conv"
@@ -157,7 +157,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: cur.tipo_curso_otro.tipo_conv_curso_nombre.toLowerCase(),
-                                      idconv: cur.iddetalle_cursos_academicos
+                                      idconv: encryptID(cur.iddetalle_cursos_academicos)
                                     }
                                   }"
                                   class="btn-conv"
@@ -222,7 +222,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: tipo_conv.toLowerCase(),
-                                      idconv: serv.serv_id
+                                      idconv: encryptID(serv.serv_id)
                                     }
                                   }"
                                   class="btn-conv"
@@ -284,7 +284,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: tipo_conv.toLowerCase(),
-                                      idconv: ofer.ofertas_id
+                                      idconv: encryptID(ofer.ofertas_id)
                                     }
                                   }"
                                   class="btn-conv"
@@ -346,7 +346,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: tipo_conv.toLowerCase(),
-                                      idconv: pub.publicaciones_id
+                                      idconv: encryptID(pub.publicaciones_id)
                                     }
                                   }"
                                   class="btn-conv"
@@ -406,7 +406,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: tipo_conv.toLowerCase(),
-                                      idconv: gac.gaceta_id
+                                      idconv: encryptID(gac.gaceta_id)
                                     }
                                   }"
                                   class="btn-conv"
@@ -466,7 +466,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: tipo_conv.toLowerCase(),
-                                      idconv: ev.evento_id
+                                      idconv: encryptID(ev.evento_id)
                                     }
                                   }"
                                   class="btn-conv"
@@ -523,7 +523,7 @@
                                     name: 'convocatoriadetalle',
                                     params: {
                                       tipo: tipo_conv.toLowerCase(),
-                                      idconv: vid.video_id
+                                      idconv: encryptID(vid.video_id)
                                     }
                                   }"
                                   class="btn-conv"
@@ -575,6 +575,7 @@ import { Pagination, Navigation, Virtual } from 'swiper'
 import SinRegistros from '../../pages/SinRegistros.vue'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
+import CryptoJS from 'crypto-js'
 export default {
   name: 'ConvocatoriasView',
   data() {
@@ -659,6 +660,11 @@ export default {
     ...mapState(['url_api','carrera_id'])
   },
   methods: {
+    encryptID(id) {
+      const encryptionKey = 'UniversidadPublicaDeElAlto'; // Cambia esto por tu clave de encriptación
+      const ciphertext = CryptoJS.AES.encrypt(id.toString(), encryptionKey).toString();
+      return ciphertext;
+    },  
     //optenemos los registros segun el tipo
     async getCategoria(tipo_conv) {
       this.isLoading = true

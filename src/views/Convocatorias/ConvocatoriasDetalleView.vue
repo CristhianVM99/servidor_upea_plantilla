@@ -483,6 +483,7 @@ import { mapState } from 'vuex'
 import VuePdfEmbed from 'vue-pdf-embed'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
+import CryptoJS from 'crypto-js'
 
 export default {    
   name: 'ConvocatoriasDetalleView',
@@ -700,10 +701,17 @@ export default {
       let fechaCadena = fecha.substr(0, 10)
       let fechaArray = fechaCadena.split('-')
       return fechaArray[2] + ' de ' + meses[fechaArray[1] - 1] + ' de ' + fechaArray[0]
-    },    
+    },
+
+    decryptID(ciphertext) {
+      const encryptionKey = 'UniversidadPublicaDeElAlto'; // Cambia esto por tu clave de encriptación
+      const bytes = CryptoJS.AES.decrypt(ciphertext, encryptionKey);
+      const decryptedID = bytes.toString(CryptoJS.enc.Utf8);
+      return decryptedID;
+    },
   },
   created() {    
-    this.getDetalleConvocatoria(this.$route.params.idconv,this.$route.params.tipo)        
+    this.getDetalleConvocatoria(this.decryptID(this.$route.params.idconv),this.$route.params.tipo)        
   },
 }
 </script>

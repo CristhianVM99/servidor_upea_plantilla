@@ -381,10 +381,18 @@
               <div class="blog-full">
                 <div class="blog-desc">
                   <h4 class="title_home">{{ Institucion.institucion_nombre }}</h4>
-                  <p id="content_home" :class="{'texto-limitado': !mostrarCompleto, 'texto-completo': mostrarCompleto}" v-html="Institucion.institucion_sobre_ins"></p>
+                  <p
+                    id="content_home"
+                    :class="{
+                      'texto-limitado': !mostrarCompleto,
+                      'texto-completo': mostrarCompleto
+                    }"
+                    v-html="Institucion.institucion_sobre_ins"
+                  ></p>
                   <span class="readon" @click="cambiarTamanoTexto"
-                      >{{ mostrarCompleto ? 'Disminuir texto' : 'Expandir texto' }} <i class="flaticon flaticon-right-arrow"></i>
-                    </span>
+                    >{{ mostrarCompleto ? 'Disminuir texto' : 'Expandir texto' }}
+                    <i class="flaticon flaticon-right-arrow"></i>
+                  </span>
                 </div>
                 <blockquote>
                   <p>
@@ -438,6 +446,177 @@
       </div>
     </div>
     <!-- Blog Single End -->
+
+    <!-- Events Section Start -->
+    <div id="sc-event-section" class="sc-event-section pt-120 pb-110 md-pt-80 md-pb-70">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="events-item mb-30 d-flex align-items-center">
+              <div class="img-part">
+                <a href="course-single.html"><img src="@/assets/images/about/upea.jpg" alt="" /></a>
+                <div class="event-price">
+                  <span class="price">Free</span>
+                </div>
+              </div>
+              <div class="content-part">
+                <h3 class="title"><a href="course-single.html">Student Exchange Program</a></h3>
+                <div class="des">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+                <ul class="meta-part">
+                  <li class="event-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                  </li>
+                  <li class="event-date"><i class="fa fa-calendar-check-o"></i>July 02, 2021</li>
+                </ul>
+                <div class="bottom-part d-flex align-items-center justify-content-between">
+                  <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                  <div class="event-join">
+                    <a href="#"><i>Join Event</i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="events-item mb-30 d-flex align-items-center">
+              <div class="img-part">
+                <a href="course-single.html"><img src="@/assets/images/about/upea.jpg" alt="" /></a>
+                <div class="event-price">
+                  <span class="price">$35</span>
+                </div>
+              </div>
+              <div class="content-part">
+                <h3 class="title"><a href="course-single.html">Reinventing Experiences</a></h3>
+                <div class="des">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+                <ul class="meta-part">
+                  <li class="event-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                  </li>
+                  <li class="event-date"><i class="fa fa-calendar-check-o"></i>July 24, 2021</li>
+                </ul>
+                <div class="bottom-part d-flex align-items-center justify-content-between">
+                  <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                  <div class="event-join">
+                    <a href="#"><i>Join Event</i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="events-item mb-30 d-flex align-items-center">
+              <div class="img-part">
+                <a href="course-single.html"><img src="@/assets/images/about/upea.jpg" alt="" /></a>
+                <div class="event-price">
+                  <span class="price">$45</span>
+                </div>
+              </div>
+              <div class="content-part">
+                <h3 class="title"><a href="course-single.html">Creativity Across Cultures</a></h3>
+                <div class="des">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+                <ul class="meta-part">
+                  <li class="event-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> 3:30 PM - 05:30 PM
+                  </li>
+                  <li class="event-date"><i class="fa fa-calendar-check-o"></i>July 24, 2021</li>
+                </ul>
+                <div class="bottom-part d-flex align-items-center justify-content-between">
+                  <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                  <div class="event-join">
+                    <a href="#"><i>Join Event</i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="events-item mb-30 d-flex align-items-center">
+              <div class="img-part">
+                <a href="course-single.html"><img src="@/assets/images/about/upea.jpg" alt="" /></a>
+                <div class="event-price">
+                  <span class="price">$56</span>
+                </div>
+              </div>
+              <div class="content-part">
+                <h3 class="title"><a href="course-single.html#">Human Centered Design</a></h3>
+                <div class="des">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+                <ul class="meta-part">
+                  <li class="event-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                  </li>
+                  <li class="event-date"><i class="fa fa-calendar-check-o"></i>July 24, 2021</li>
+                </ul>
+                <div class="bottom-part d-flex align-items-center justify-content-between">
+                  <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                  <div class="event-join">
+                    <a href="#"><i>Join Event</i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="events-item mb-30 d-flex align-items-center">
+              <div class="img-part">
+                <a href="course-single.html"><img src="@/assets/images/about/upea.jpg" alt="" /></a>
+                <div class="event-price">
+                  <span class="price">$45</span>
+                </div>
+              </div>
+              <div class="content-part">
+                <h3 class="title"><a href="course-single.html">Friendly Gatherings</a></h3>
+                <div class="des">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+                <ul class="meta-part">
+                  <li class="event-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                  </li>
+                  <li class="event-date"><i class="fa fa-calendar-check-o"></i>July 24, 2021</li>
+                </ul>
+                <div class="bottom-part d-flex align-items-center justify-content-between">
+                  <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                  <div class="event-join">
+                    <a href="#"><i>Join Event</i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="events-item mb-30 d-flex align-items-center">
+              <div class="img-part">
+                <a href="course-single.html"><img src="@/assets/images/about/upea.jpg" alt="" /></a>
+                <div class="event-price">
+                  <span class="price">$56</span>
+                </div>
+              </div>
+              <div class="content-part">
+                <h3 class="title"><a href="course-single.html#">Kids’ Birthday Party</a></h3>
+                <div class="des">Excepteur sint occaecat cupidatat non proident, sunt in culpa</div>
+                <ul class="meta-part">
+                  <li class="event-time">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                  </li>
+                  <li class="event-date"><i class="fa fa-calendar-check-o"></i>July 24, 2021</li>
+                </ul>
+                <div class="bottom-part d-flex align-items-center justify-content-between">
+                  <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                  <div class="event-join">
+                    <a href="#"><i>Join Event</i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ul class="sc-navigation text-end mt-30">
+          <li><i class="flaticon flaticon-left-arrow"></i></li>
+          <li class="active">1</li>
+          <li>2</li>
+          <li><i class="flaticon flaticon-right-arrow"></i></li>
+        </ul>
+      </div>
+    </div>
+    <!-- Events Section End -->
 
     <!-- About Section Start -->
     <div id="sc-about" class="sc-about about-style2 pb-120 md-pt-80 md-pb-70">
@@ -823,7 +1002,7 @@
     <!-- Team Section Start -->
     <div
       class="sc-team team-style-1 gray-bg arrow-animation-1 position-relative pt-110 pb-90 md-pt-70 md-pb-50"
-      v-if="(this.carrera_id!=0)"
+      v-if="this.carrera_id != 0"
     >
       <div class="pt-60">
         <div class="sec-title mb-30 text-center md-mb-10">
@@ -836,7 +1015,7 @@
           class="autoridades-content"
           :navigation="true"
           :modules="modules"
-          :breakpoints="swiperOptions.breakpointsAutoridades"          
+          :breakpoints="swiperOptions.breakpointsAutoridades"
         >
           <swiper-slide v-for="(autoridad, id_aut) of Institucion.autoridad" :key="id_aut">
             <div class="col-lg-6 team-inner-item autoridades-target">
@@ -904,27 +1083,24 @@
     <!-- Team Section Start -->
     <div
       class="sc-team team-style-1 gray-bg arrow-animation-1 position-relative pt-110 pb-90 md-pt-70 md-pb-50 content-autoridades-upea"
-      v-if="(this.carrera_id==0)"
+      v-if="this.carrera_id == 0"
     >
       <div class="">
         <div class="sec-title mb-30 text-center md-mb-10">
           <div class="sub-title primary">Autoridades<span class="heading-border-line"></span></div>
           <h2 class="title mb-0">Nuestras Autoridades</h2>
-        </div>          
-          <swiper
-            :slidesPerView="2"
-            :spaceBetween="30"
-            :pagination="{
-              clickable: true,
-            }"
-            :modules="modules"
-            :breakpoints="swiperOptions.breakpointsAutoridades"  
-            class="mySwiper swiper-autoridades"            
-          >
-            <swiper-slide 
-            v-for="(autoridad, id_aut) of Institucion.autoridad"
-            :key="id_aut"
-            >
+        </div>
+        <swiper
+          :slidesPerView="2"
+          :spaceBetween="30"
+          :pagination="{
+            clickable: true
+          }"
+          :modules="modules"
+          :breakpoints="swiperOptions.breakpointsAutoridades"
+          class="mySwiper swiper-autoridades"
+        >
+          <swiper-slide v-for="(autoridad, id_aut) of Institucion.autoridad" :key="id_aut">
             <div class="col-lg-12 team-inner-item autoridades-target">
               <div class="team-wrap">
                 <div class="team-img">
@@ -969,7 +1145,7 @@
               </div>
             </div>
           </swiper-slide>
-          </swiper>
+        </swiper>
       </div>
       <div class="animated-arrow-1 animated-arrow left-right-new">
         <img src="@/assets/images/arrow-5.png" alt="" />
@@ -985,7 +1161,7 @@
         <img src="@/assets/images/arrow-3.png" alt="" />
       </div>
     </div>
-    <!-- Team Section End -->    
+    <!-- Team Section End -->
 
     <!-- About Instructor Section Start -->
     <div
@@ -1057,6 +1233,139 @@
     </div>
     <!-- About Instructor Section End -->
 
+    <!-- Course Section Start -->
+    <div
+      id="sc-event-section"
+      class="sc-event-section pt-120 pb-110 md-pt-80 md-pb-70 eventos-container"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="sec-title mb-60 text-center md-mb-30">
+          <div class="sub-title primary txt-reciente">lo más reciente de</div>
+          <h2 class="title mb-0">Eventos</h2>
+        </div>
+          <swiper
+            :slidesPerView="3"
+            :spaceBetween="30"
+            :pagination="{
+              clickable: true
+            }"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide v-for="(ev, id_ev) in Eventos" :key="id_ev">              
+              <div class="col-lg-12 col-md-6 mb-30 loadcourse addcourse">
+                <div class="events-item">
+                  <div class="img-part">
+                    <a href="#"><img :src="url_api + '/Eventos/' + ev.evento_imagen" alt="img" /></a>
+                    <div class="event-price">
+                      <span class="price">Free</span>
+                    </div>
+                  </div>
+                  <div class="content-part">
+                    <h3 class="title"><a href="course-single.html">{{ ev.evento_titulo }}</a></h3>
+                    <div class="des">
+                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    </div>
+                    <ul class="meta-part">
+                      <li class="event-time">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                      </li>
+                      <li class="event-date">
+                        <i class="fa fa-calendar-check-o"></i>{{ dmy(ev.evento_fecha) }}
+                      </li>
+                    </ul>
+                    <div class="bottom-part d-flex align-items-center justify-content-between">
+                      <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                      <div class="event-join">
+                        <router-link
+                        :to="{
+                        name: 'convocatoriadetalle',
+                        params: {
+                          tipo: 'eventos',
+                          idconv: encryptID(ev.evento_id)
+                        }
+                      }"
+                    >
+                      <i>Leer Mas</i>
+                    </router-link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>
+          </swiper>
+        </div>
+        <div class="row">
+          <div class="sec-title mb-60 text-center md-mb-30">
+          <div class="sub-title primary txt-reciente">lo más reciente de</div>
+          <h2 class="title mb-0">Publicaciones</h2>
+        </div>
+          <swiper
+            :slidesPerView="3"
+            :spaceBetween="30"
+            :pagination="{
+              clickable: true
+            }"
+            :modules="modules"
+            class="mySwiper"
+          >
+            <swiper-slide v-for="(pub, id_pub) in Publicaciones" :key="id_pub"
+              ><div class="col-lg-12 col-md-6 mb-30 loadcourse addcourse">
+                <div class="events-item">
+                  <div class="img-part">
+                    <a href="#"><img
+                  class=""
+                  :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
+                  alt="img"
+                /></a>
+                    <div class="event-price">
+                      <span class="price">Free</span>
+                    </div>
+                  </div>
+                  <div class="content-part">
+                    <h3 class="title"><a href="course-single.html">{{ pub.publicaciones_titulo }}</a></h3>
+                    <div class="des">
+                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                    </div>
+                    <ul class="meta-part">
+                      <li class="event-time">
+                        <i class="fa fa-clock-o" aria-hidden="true"></i> 5:30 PM - 06:30 PM
+                      </li>
+                      <li class="event-date">
+                        <i class="fa fa-calendar-check-o"></i>{{ dmy(pub.publicaciones_fecha) }}
+                      </li>
+                    </ul>
+                    <div class="bottom-part d-flex align-items-center justify-content-between">
+                      <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
+                      <div class="event-join">
+                        <router-link
+                      :to="{
+                        name: 'convocatoriadetalle',
+                        params: {
+                          tipo: 'publicaciones',
+                          idconv: encryptID(pub.publicaciones_id)
+                        }
+                      }"
+                    >
+                      <i>Leer Mas</i>
+                    </router-link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </swiper-slide>            
+          </swiper>
+        </div>
+        <div id="loadmore" class="text-center mt-30">
+          <a class="readon" href="#">Learn More <i class="flaticon flaticon-right-arrow"></i> </a>
+        </div>
+      </div>
+    </div>
+    <!-- Course Section End -->
+
     <!-- Blog Section Start -->
     <div
       id="sc-blog"
@@ -1108,7 +1417,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: latestConvocatoria.tipo_conv_comun.tipo_conv_comun_titulo.toLowerCase(),
-                          idconv: latestConvocatoria.idconvocatorias
+                          idconv: encryptID(latestConvocatoria.idconvocatorias)
                         }
                       }"
                       class="btn-conv"
@@ -1147,7 +1456,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: latestComunicado.tipo_conv_comun.tipo_conv_comun_titulo.toLowerCase(),
-                          idconv: latestComunicado.idconvocatorias
+                          idconv: encryptID(latestComunicado.idconvocatorias)
                         }
                       }"
                       class="btn-conv"
@@ -1185,7 +1494,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: latestAviso.tipo_conv_comun.tipo_conv_comun_titulo.toLowerCase(),
-                          idconv: latestAviso.idconvocatorias
+                          idconv: encryptID(latestAviso.idconvocatorias)
                         }
                       }"
                       class="btn-conv"
@@ -1242,7 +1551,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: 'eventos',
-                          idconv: ev.evento_id
+                          idconv: encryptID(ev.evento_id)
                         }
                       }"
                     >
@@ -1388,7 +1697,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: latestCurso.tipo_curso_otro.tipo_conv_curso_nombre.toLowerCase(),
-                          idconv: latestCurso.iddetalle_cursos_academicos
+                          idconv: encryptID(latestCurso.iddetalle_cursos_academicos)
                         }
                       }"
                       >Leer Mas</router-link
@@ -1425,7 +1734,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: latestSeminario.tipo_curso_otro.tipo_conv_curso_nombre.toLowerCase(),
-                          idconv: latestSeminario.iddetalle_cursos_academicos
+                          idconv: encryptID(latestSeminario.iddetalle_cursos_academicos)
                         }
                       }"
                       class="btn-conv"
@@ -1486,7 +1795,7 @@
                         name: 'convocatoriadetalle',
                         params: {
                           tipo: 'publicaciones',
-                          idconv: pub.publicaciones_id
+                          idconv: encryptID(pub.publicaciones_id)
                         }
                       }"
                     >
@@ -1540,6 +1849,7 @@ import 'swiper/css/free-mode'
 import { Autoplay, FreeMode, Pagination, Navigation } from 'swiper'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
+import CryptoJS from 'crypto-js'
 
 export default {
   name: 'HomeView',
@@ -1646,13 +1956,19 @@ export default {
     }
   },
   methods: {
+    encryptID(id) {
+      const encryptionKey = 'UniversidadPublicaDeElAlto' // Cambia esto por tu clave de encriptación
+      const ciphertext = CryptoJS.AES.encrypt(id.toString(), encryptionKey).toString()
+      return ciphertext
+    },
+
     cambiarTamanoTexto() {
-      this.mostrarCompleto = !this.mostrarCompleto;
+      this.mostrarCompleto = !this.mostrarCompleto
       if (!this.mostrarCompleto) {
-        const appElement = document.getElementById('content_home');
-        appElement.scrollIntoView();
+        const appElement = document.getElementById('content_home')
+        appElement.scrollIntoView()
       }
-    },    
+    },
 
     async getCarreras() {
       try {
