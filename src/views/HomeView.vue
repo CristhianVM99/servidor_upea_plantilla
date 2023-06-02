@@ -610,7 +610,7 @@
           </div>
           <div class="col-lg-6 hidden-md">
             <div class="img-part cta-img">
-              <img src="bgPerson.png" alt="Image" />
+              <img src="/bgPerson.png" alt="Image" />
             </div>
           </div>
         </div>
@@ -1278,7 +1278,7 @@
           </div>
           <div class="col-lg-6 hidden-md">
             <div class="img-part cta-img">
-              <img src="bgPerson.png" alt="Image" />
+              <img src="/bgPerson.png" alt="Image" />
             </div>
           </div>
         </div>
