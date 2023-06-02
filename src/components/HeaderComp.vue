@@ -203,7 +203,7 @@
                       </li>
 
                       <li class="menu-item-has-children" v-if="this.carrera_id == 0">
-                        <a href="#">Comunicados</a>
+                        <a href="#">Articulos</a>
                         <ul class="sub-menu">
                           <li v-if="this.carrera_id != 0">
                             <router-link
