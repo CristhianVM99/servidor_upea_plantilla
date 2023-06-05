@@ -67,6 +67,7 @@
     .sc-banner .view-students-img {
         right: 25%;
     }
+}
 @media only screen and (max-width: 1199px){
     .sc-banner .banner-img img{
         max-width: 450px;

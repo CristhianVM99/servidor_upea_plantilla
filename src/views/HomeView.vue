@@ -448,7 +448,7 @@
     <!-- Blog Single End -->
 
     <!-- Blog Section Start -->
-    <div id="sc-blog" class="sc-blog comunicados-bg main-home pb-200 pt-110 md-pt-70 md-pb-160"    
+    <div id="sc-blog" class="sc-blog comunicados-bg main-home pb-80 pt-80 md-pt-70 md-pb-160"    
     >
       <div class="">
         <div class="sec-title mb-60 text-center md-mb-30">
@@ -592,10 +592,8 @@
               data-wow-delay="300ms"
               data-wow-duration="2000ms"
               v-if="this.carrera_id == 0"
-            >
-              <a class="readon" href="/about"
-                >Leer mas <i class="flaticon flaticon-right-arrow"></i>
-              </a>
+            >              
+              <router-link :to="{ name: 'about' }" class="readon">Leer mas <i class="flaticon flaticon-right-arrow"></i></router-link>
             </div>
           </div>
         </div>
@@ -1899,9 +1897,9 @@ export default {
 
       swiperOptions: {
         breakpointsCarrera: {
-          360: {
+          0: {
             slidesPerView: 2,
-            spaceBetween: 15
+            spaceBetween: 20
           },
           770: {
             slidesPerView: 4,
@@ -1913,7 +1911,7 @@ export default {
           }
         },
         breakpointsComunicados: {
-          412: {
+          0: {
             slidesPerView: 1,
             spaceBetween: 10
           },
@@ -2254,10 +2252,7 @@ export default {
     this.createdComponent()    
   },
   mounted() {
-    this.scrollToTop()
-    if(this.carrera_id==0){
-     
-    }
+    this.scrollToTop()    
   }
 }
 </script>

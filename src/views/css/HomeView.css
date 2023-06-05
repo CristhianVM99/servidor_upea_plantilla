@@ -745,8 +745,7 @@
   text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-.organigrama {
-  background: url(../../public/bgUpea.jpg);
+.organigrama {  
   background-size: cover;
   background-repeat: none;
 }
@@ -1356,7 +1355,8 @@
 }
 
 .img-part-carreras img{
-  max-height: 400px;
+  max-height: 700px;
+  object-fit: contain;
 }
 
 .comunicados-bg{

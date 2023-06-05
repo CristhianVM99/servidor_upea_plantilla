@@ -264,12 +264,10 @@
           >
             <!-- Intro Info Tabs-->
             <div class="intro-info-tabs">
-              <div class="">
-                <vue-pdf-embed
+              <vue-pdf-embed
                           :source="url_api + '/Gaceta/' + this.Gaceta.gaceta_documento"
                           :page="1"
                 />
-              </div>
               <h3>{{ this.Gaceta.gaceta_titulo }}</h3>
               <div class="event-meta d-flex align-items-center">
                 <div class="event-date">

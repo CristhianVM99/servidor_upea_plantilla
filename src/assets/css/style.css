@@ -364,8 +364,7 @@ body .dblock {
   background: url(../images/upeabg3.jpg);
   background-size: cover;
 }
-.cta-bg-image-autor {
-  background: url(../images/cta/cta-autores.png);
+.cta-bg-image-autor {  
 }
 .course-bg {
   background: url(../images/bg/course_bg.png);
@@ -383,7 +382,6 @@ body .dblock {
   background: url(../images/banner/banner-bg3.jpg);
 }
 .banner-bg4 {
-  background: url(../images/banner/banner-bg4.jpg);
 }
 .subscribe-bg-image {
   background: url(../images/bg/footer-subscribe-bg.jpg);
@@ -2433,8 +2431,7 @@ body .modal-backdrop {
   text-align: center;
   font-weight: 600;
   font-size: 23px;
-  font-family: 'Jost', sans-serif;
-  background-image: url(../images/events/icon1.png);
+  font-family: 'Jost', sans-serif;  
   background-size: 100%;
   background-repeat: no-repeat;
   margin-right: 40px;
@@ -2460,10 +2457,8 @@ body .modal-backdrop {
   left: 4px;
 }
 .sc-upcoming-event .event-item.event2 .event-date {
-  background-image: url(../images/events/icon2.png);
 }
 .sc-upcoming-event .event-item.event3 .event-date {
-  background-image: url(../images/events/icon3.png);
 }
 /* ------------------------------------
     10. Counter Section CSS
