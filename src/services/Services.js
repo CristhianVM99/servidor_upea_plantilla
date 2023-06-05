@@ -64,6 +64,10 @@ function getPublicaciones(){
   return Api().get('/api/publicacionesAll/'+ import.meta.env.VITE_VUE_APP_ID_INSTITUCION)
 }
 
+function getPublicacionesCarreras(id){
+  return Api().get('/api/publicacionesAll/'+ id)
+}
+
 function getPublicacion(id){
   return Api().get('/api/publicaciones/'+ id)
 }
@@ -123,6 +127,7 @@ export default {
   getOfertasAll,
   getOferta,
 
+  getPublicacionesCarreras,
   getPublicaciones,
   getPublicacion,
   
