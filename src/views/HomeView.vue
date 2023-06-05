@@ -551,7 +551,7 @@
     <!-- Course Section End -->    
 
     <!-- About Section Start -->
-    <div id="sc-about" class="sc-about about-style2 pb-120 md-pt-80 md-pb-70">
+    <div id="sc-about" class="sc-about about-style2 pt-120 pb-120 md-pt-80 md-pb-70">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-5">
