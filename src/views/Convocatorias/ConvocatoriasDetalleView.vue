@@ -15,7 +15,7 @@
         <img src="@/assets/images/upeabg2.jpg" alt="Breadcrumbs Image" />
       </div>
       <div class="breadcrumbs-text white-color">
-        <h1 class="page-title">Events Details</h1>
+        <h1 class="page-title">{{ tipo_conv.toLocaleLowerCase() }} detalle</h1>
         <ul>
           <router-link :to="{ name: 'home' }">
             <button class="btn-page mr-40">
@@ -68,7 +68,7 @@
               <div class="desc mt-20 mb-30" v-html="this.Convocatoria.con_descripcion">                
               </div>
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -132,7 +132,7 @@
               </div>
 
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>              
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -193,7 +193,7 @@
                 </ul>
               </div>
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -234,7 +234,7 @@
               <div class="desc mt-20 mb-30" v-html="this.Video.video_breve_descripcion">                
               </div>              
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -264,10 +264,12 @@
           >
             <!-- Intro Info Tabs-->
             <div class="intro-info-tabs">
-              <vue-pdf-embed
+              <div>
+                <vue-pdf-embed
                           :source="url_api + '/Gaceta/' + this.Gaceta.gaceta_documento"
                           :page="1"
                 />
+              </div>
               <h3>{{ this.Gaceta.gaceta_titulo }}</h3>
               <div class="event-meta d-flex align-items-center">
                 <div class="event-date">
@@ -277,7 +279,8 @@
                 </div>                
               </div>                         
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <a class="readon" :href="this.url_api+'/Gaceta/'+ this.Gaceta.gaceta_documento" target="_blank">Descargar PDF <i class="flaticon flaticon-right-arrow"></i> </a>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -324,10 +327,11 @@
               <div class="desc mt-20 mb-30">  
                 <ul>
                   <p><b>Autor: </b>{{ this.Publicacion.publicaciones_autor }}</p>
+                  <p v-html="this.Publicacion.publicaciones_descripcion"></p>
                 </ul>
               </div>
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -384,7 +388,7 @@
                 </ul>
               </div>
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"
@@ -441,7 +445,7 @@
                 </ul>
               </div>
               <h4><i class="fa fa-map-marker"></i> {{ Institucion.institucion_direccion }}</h4>
-              <iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>
+              <!--<iframe :src="Institucion.institucion_api_google_map" width="100%" height="500px"></iframe>-->
               <div class="event-share d-flex align-items-center justify-content-between mt-20">
                 <div
                   class="btn-part wow fadeInUp"

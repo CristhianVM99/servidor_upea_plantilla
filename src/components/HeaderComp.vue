@@ -29,7 +29,7 @@
               <ul class="topbar-right">
                 <li class="login-register">
                   <i class="fa fa-sign-in"></i>
-                  <a href="http://administracionpaginas.upea.edu.bo/login">Ingresar</a>
+                  <a href="http://administracionpaginas.upea.edu.bo/login" target="_blank">Ingresar</a>
                   <!--<router-link :to="{ name: 'register' }">Register</router-link>-->
                 </li>
               </ul>

@@ -75,7 +75,7 @@ const routes = [
         path : '/ConvocatoriaDetalle/:tipo/:idconv',
         name : 'convocatoriadetalle',
         component :()=> import('@/views/Convocatorias/ConvocatoriasDetalleView.vue')
-      }
+      },      
     ]
   },
   {

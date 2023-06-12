@@ -1365,6 +1365,17 @@
 .swiper-comunicados-carreras{
   background: transparent;
 }
+
+/*================= PUBLICACIONES UNIVERSIDADES ===============*/
+.content-carreras_publicaciones_img{  
+  overflow: hidden;
+  object-fit: cover !important;
+}
+.carreras_publicaciones_img{
+  height: 500px;  
+  width: 100%;
+}
+
 /*================= RESPONSIVIDAD ================*/
 @media screen and (max-width: 1380px){    
   .container-principa-upea{

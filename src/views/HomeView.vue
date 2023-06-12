@@ -100,13 +100,6 @@
                     >
                       {{ Institucion.institucion_nombre }}
                     </h1>
-                    <h5
-                      class="banner-des mb-35 wow fadeInUp inst-objetivos"
-                      data-wow-delay="300ms"
-                      data-wow-duration="3000ms"
-                      v-if="Institucion.institucion_objetivos != null"
-                      v-html="Institucion.institucion_objetivos"
-                    ></h5>
                   </div>
                 </div>
               </div>
@@ -447,10 +440,9 @@
     </div>
     <!-- Blog Single End -->
 
-    <!-- Blog Section Start -->
-    <div id="sc-blog" class="sc-blog comunicados-bg main-home pb-80 pt-80 md-pt-70 md-pb-160"    
-    >
-      <div class="">
+    <!-- Blog Section Start -->   
+    <div id="sc-blog" class="sc-blog comunicados-bg main-home pb-110 pt-120 md-pb-70 md-pt-80">
+      <div class="container">
         <div class="sec-title mb-60 text-center md-mb-30">
           <div class="sub-title primary">UPEA</div>
           <h2 class="title mb-0">Comunicados Universitarios...</h2>
@@ -462,36 +454,55 @@
             clickable: true
           }"
           :modules="modules"
-          :breakpoints="swiperOptions.breakpointsComunicados"          
+          :breakpoints="swiperOptions.breakpointsComunicados"
         >
           <swiper-slide
-          v-for="(pub, id_pub) in PublicacionesCarreras"
-              :key="id_pub"
-              class="swiper-comunicados-carreras"
-          >            
-            <div class="">
-              <div class="image-part swiper-comunicados-carreras img-part-carreras">
+            v-for="(pub, id_pub) in PublicacionesCarreras"
+            :key="id_pub"
+            class="swiper-comunicados-carreras"
+          >
+          <div class="col-lg-12 col-md-6 mb-30 loadcourse addcourse">
+            <div class="blog-item">
+              <div class="image-part content-carreras_publicaciones_img">
                 <img
-                              :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
-                              alt="img"
-                              class="carreras_publicaciones_img"
-                            />
+                  :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
+                  alt="img"
+                  class="carreras_publicaciones_img"
+                />
               </div>
-              <!--<div class="blog-content">                
-                <h3 class="title">{{ pub.publicaciones_titulo }}</h3>                              
-              </div>-->
+              <div class="blog-content">
+                <ul class="blog-meta">
+                  <li><i class="fa fa-user-o"></i> {{ pub.publicaciones_tipo }}</li>
+                  <li><i class="fa fa-calendar"></i>{{ dmy( pub.publicaciones_fecha ) }}</li>
+                </ul>
+                <h3 class="title">{{ pub.publicaciones_titulo }}</h3>                
+                <div class="btn-btm">
+                  <div class="rs-view-btn">
+                    <router-link
+                    :to="{
+                            name: 'convocatoriadetalle',
+                            params: {
+                              tipo: 'publicaciones',
+                              idconv: encryptID(pub.publicaciones_id),
+
+                            }
+                          }"
+                    >Leer Mas</router-link>
+                  </div>
+                </div>
+              </div>
             </div>
-          </swiper-slide>                     
-        </swiper>
+          </div>  
+          </swiper-slide>
+        </swiper>        
       </div>
     </div>
-    <!-- Blog Section End -->   
 
     <!-- Observacion -->
     <div
       id="sc-popular-courses"
       class="sc-popular-courses gray-bg main-home pt-110 pb-110 md-pt-70 md-pb-70"
-      v-if="this.carrera_id==3"
+      v-if="this.carrera_id == 3"
     >
       <div class="container">
         <div class="sec-title text-center mb-55 md-mb-20">
@@ -501,54 +512,49 @@
         <!-- Events Section Start -->
         <div id="sc-event-section" class="sc-event-section md-pt-80 md-pb-70">
           <div class="container">
-            <swiper :navigation="true" :modules="modules" class="mySwiper"            
-              >
-              <swiper-slide
-              v-for="(pub, id_pub) in PublicacionesCarreras"
-              :key="id_pub"
-              >
-                <div class="row">                  
-              <div class="col-lg-12"             
-              >
-                <div class="events-item mb-30 d-flex align-items-center">
-                  <div class="img-part">
-                    <img
-                              :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
-                              alt="img"
-                              class="carreras_publicaciones_img"
-                            />
-                    <div class="event-price">
-                      <span class="price">publicación</span>
-                    </div>
-                  </div>
-                  <div class="">
-                    <h3 class="title">{{ pub.publicaciones_titulo }}</h3>
-                    <div class="des">
-                      Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                    </div>
-                    <ul class="meta-part">                      
-                      <li class="event-date">
-                        <i class="fa fa-calendar-check-o"></i>{{ dmy(pub.publicaciones_fecha) }}
-                      </li>
-                    </ul>
-                    <!--<div class="bottom-part d-flex align-items-center justify-content-between">
+            <swiper :navigation="true" :modules="modules" class="mySwiper">
+              <swiper-slide v-for="(pub, id_pub) in PublicacionesCarreras" :key="id_pub">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="events-item mb-30 d-flex align-items-center">
+                      <div class="img-part">
+                        <img
+                          :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
+                          alt="img"
+                          class="carreras_publicaciones_img"
+                        />
+                        <div class="event-price">
+                          <span class="price">publicación</span>
+                        </div>
+                      </div>
+                      <div class="">
+                        <h3 class="title">{{ pub.publicaciones_titulo }}</h3>
+                        <div class="des">
+                          Excepteur sint occaecat cupidatat non proident, sunt in culpa
+                        </div>
+                        <ul class="meta-part">
+                          <li class="event-date">
+                            <i class="fa fa-calendar-check-o"></i>{{ dmy(pub.publicaciones_fecha) }}
+                          </li>
+                        </ul>
+                        <!--<div class="bottom-part d-flex align-items-center justify-content-between">
                       <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
                       <div class="event-join">
                         <a href="#">Join Event</a>
                       </div>
                     </div>-->
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>              
-                </div>
-              </swiper-slide>            
-            </swiper>            
+              </swiper-slide>
+            </swiper>
           </div>
         </div>
         <!-- Events Section End -->
       </div>
     </div>
-    <!-- Course Section End -->    
+    <!-- Course Section End -->
 
     <!-- About Section Start -->
     <div id="sc-about" class="sc-about about-style2 pt-120 pb-120 md-pt-80 md-pb-70">
@@ -592,8 +598,10 @@
               data-wow-delay="300ms"
               data-wow-duration="2000ms"
               v-if="this.carrera_id == 0"
-            >              
-              <router-link :to="{ name: 'about' }" class="readon">Leer mas <i class="flaticon flaticon-right-arrow"></i></router-link>
+            >
+              <router-link :to="{ name: 'about' }" class="readon"
+                >Leer mas <i class="flaticon flaticon-right-arrow"></i
+              ></router-link>
             </div>
           </div>
         </div>
@@ -743,7 +751,6 @@
       </div>
     </div>
     <!-- CTA Section End -->
-    
 
     <!-- Counter Section Start -->
     <div
@@ -1093,7 +1100,7 @@
       </div>
     </div>
     <!-- Team Section End -->
-    
+
     <!-- About Instructor Section Start -->
     <div
       id="sc-about-instructor"
@@ -1738,113 +1745,113 @@
   </div>
   <!-- Map Start -->
 
-   <!-- Blog Section Start -->
-   <div id="sc-blog" class="sc-blog main-home pb-200 pt-110 md-pt-70 md-pb-160">
-      <div class="container">
-        <div class="sec-title mb-60 text-center md-mb-30">
-          <div class="sub-title primary">UPEA</div>
-          <h2 class="title mb-0">Servicios...</h2>
-        </div>
-        <swiper
-          :slidesPerView="3"
-          :spaceBetween="30"
-          :pagination="{
-            clickable: true
-          }"
-          :modules="modules"
-          :breakpoints="swiperOptions.breakpointsComunicados"
-          class="swiper-services"
-        >
-          <swiper-slide>            
-            <div class="blog-item">
-              <div class="image-part img-part-services">
-                <img src="@/assets/images/servicios/serv01.jpg" alt="" />
-              </div>
-              <div class="blog-content">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-user-o"></i> Upea</li>
-                  <li><i class="fa fa-calendar"></i>Marzo 8, 2021</li>
-                </ul>
-                <h3 class="title">Radio Upea</h3>
-                <div class="desc">Escuchalos todos los sabados de 15:00 a 16:00 por la 100 FM</div>
-                <!--<div class="btn-btm">
-                <div class="rs-view-btn">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>-->
-              </div>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="blog-item">
-              <div class="image-part img-part-services">
-                <img src="@/assets/images/servicios/serv02.jpg" alt="" />
-              </div>
-              <div class="blog-content">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-user-o"></i> Upea</li>
-                  <li><i class="fa fa-calendar"></i>Diciembre 6, 2020</li>
-                </ul>
-                <h3 class="title">Veterinaria</h3>
-                <div class="desc">
-                  La Clinica Veterinaria Upea Difunde sus Servicios a la Poblacion.
-                </div>
-                <!--<div class="btn-btm">
-                <div class="rs-view-btn">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>-->
-              </div>
-            </div>
-          </swiper-slide>
-          <swiper-slide
-            ><div class="blog-item">
-              <div class="image-part img-part-services">
-                <img src="@/assets/images/servicios/serv03.jpeg" alt="" />
-              </div>
-              <div class="blog-content">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-user-o"></i> Upea</li>
-                  <li><i class="fa fa-calendar"></i>Noviembre 28, 2019</li>
-                </ul>
-                <h3 class="title"><a href="blog-single.html">Odontologia</a></h3>
-                <div class="desc">
-                  Clinica Odonotologica de la Upea ofrece sus Servicios a la Poblcación
-                </div>
-                <!--<div class="btn-btm">
-                <div class="rs-view-btn">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>-->
-              </div>
-            </div>
-          </swiper-slide>
-          <swiper-slide>
-            <div class="blog-item">
-              <div class="image-part img-part-services">
-                <img src="@/assets/images/servicios/serv04.jpg" alt="" />
-              </div>
-              <div class="blog-content">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-user-o"></i> Upea</li>
-                  <li><i class="fa fa-calendar"></i>Marzo 4, 2019</li>
-                </ul>
-                <h3 class="title">Jisk'a Wawa</h3>
-                <div class="desc">
-                  Centro de Desarrollo Infantil, reanuda sus servicios con la Upea.
-                </div>
-                <!--<div class="btn-btm">
-                <div class="rs-view-btn">
-                  <a href="blog-single.html">Read More</a>
-                </div>
-              </div>-->
-              </div>
-            </div>
-          </swiper-slide>
-        </swiper>
+  <!-- Blog Section Start -->
+  <div id="sc-blog" class="sc-blog main-home pb-200 pt-110 md-pt-70 md-pb-160">
+    <div class="container">
+      <div class="sec-title mb-60 text-center md-mb-30">
+        <div class="sub-title primary">UPEA</div>
+        <h2 class="title mb-0">Servicios...</h2>
       </div>
+      <swiper
+        :slidesPerView="3"
+        :spaceBetween="30"
+        :pagination="{
+          clickable: true
+        }"
+        :modules="modules"
+        :breakpoints="swiperOptions.breakpointsComunicados"
+        class="swiper-services"
+      >
+        <swiper-slide>
+          <div class="blog-item">
+            <div class="image-part img-part-services">
+              <img src="@/assets/images/servicios/serv01.jpg" alt="" />
+            </div>
+            <div class="blog-content">
+              <ul class="blog-meta">
+                <li><i class="fa fa-user-o"></i> Upea</li>
+                <li><i class="fa fa-calendar"></i>Marzo 8, 2021</li>
+              </ul>
+              <h3 class="title">Radio Upea</h3>
+              <div class="desc">Escuchalos todos los sabados de 15:00 a 16:00 por la 100 FM</div>
+              <!--<div class="btn-btm">
+                <div class="rs-view-btn">
+                  <a href="blog-single.html">Read More</a>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="blog-item">
+            <div class="image-part img-part-services">
+              <img src="@/assets/images/servicios/serv02.jpg" alt="" />
+            </div>
+            <div class="blog-content">
+              <ul class="blog-meta">
+                <li><i class="fa fa-user-o"></i> Upea</li>
+                <li><i class="fa fa-calendar"></i>Diciembre 6, 2020</li>
+              </ul>
+              <h3 class="title">Veterinaria</h3>
+              <div class="desc">
+                La Clinica Veterinaria Upea Difunde sus Servicios a la Poblacion.
+              </div>
+              <!--<div class="btn-btm">
+                <div class="rs-view-btn">
+                  <a href="blog-single.html">Read More</a>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide
+          ><div class="blog-item">
+            <div class="image-part img-part-services">
+              <img src="@/assets/images/servicios/serv03.jpeg" alt="" />
+            </div>
+            <div class="blog-content">
+              <ul class="blog-meta">
+                <li><i class="fa fa-user-o"></i> Upea</li>
+                <li><i class="fa fa-calendar"></i>Noviembre 28, 2019</li>
+              </ul>
+              <h3 class="title"><a href="blog-single.html">Odontologia</a></h3>
+              <div class="desc">
+                Clinica Odonotologica de la Upea ofrece sus Servicios a la Poblcación
+              </div>
+              <!--<div class="btn-btm">
+                <div class="rs-view-btn">
+                  <a href="blog-single.html">Read More</a>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide>
+          <div class="blog-item">
+            <div class="image-part img-part-services">
+              <img src="@/assets/images/servicios/serv04.jpg" alt="" />
+            </div>
+            <div class="blog-content">
+              <ul class="blog-meta">
+                <li><i class="fa fa-user-o"></i> Upea</li>
+                <li><i class="fa fa-calendar"></i>Marzo 4, 2019</li>
+              </ul>
+              <h3 class="title">Jisk'a Wawa</h3>
+              <div class="desc">
+                Centro de Desarrollo Infantil, reanuda sus servicios con la Upea.
+              </div>
+              <!--<div class="btn-btm">
+                <div class="rs-view-btn">
+                  <a href="blog-single.html">Read More</a>
+                </div>
+              </div>-->
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper>
     </div>
-    <!-- Blog Section End -->
+  </div>
+  <!-- Blog Section End -->
 
   <div class="map-card">
     <div class="map-tools">
@@ -1947,7 +1954,7 @@ export default {
       Servicios: [],
       Ofertas: [],
       Publicaciones: [],
-      PublicacionesCarreras:[],
+      PublicacionesCarreras: [],
       Gacetas: [],
       Gaceta: [],
       Eventos: [],
@@ -2134,20 +2141,20 @@ export default {
       } catch (e) {
         console.log(e)
       }
-    },    
-    async getCarreraPublicaciones(id){            
-      const response = await Services.getPublicacionesCarreras(id)
-            response.data.forEach((conv) => {
-            if(response.data.length>0){
-              this.PublicacionesCarreras.push(conv)
-            }
-      })        
     },
-    async getPublicacionesCarreraAll() {          
+    async getCarreraPublicaciones(id) {
+      const response = await Services.getPublicacionesCarreras(id)
+      response.data.forEach((conv) => {
+        if (response.data.length > 0) {
+          this.PublicacionesCarreras.push(conv)
+        }
+      })
+    },
+    async getPublicacionesCarreraAll() {
       try {
-        this.Carreras.forEach((carrera)=>{
+        this.Carreras.forEach((carrera) => {
           this.getCarreraPublicaciones(carrera.carrera_id)
-        })           
+        })
       } catch (e) {
         console.log(e)
       }
@@ -2229,7 +2236,7 @@ export default {
         await this.getConvocatoriasAllUPEA()
         await this.getPublicaciones()
         await this.getGacetaAll()
-        await this.getEventos()      
+        await this.getEventos()
         await this.getPublicacionesCarreraAll()
       }
       if (this.carrera_id != 0) {
@@ -2249,10 +2256,10 @@ export default {
     }
   },
   created() {
-    this.createdComponent()    
+    this.createdComponent()
   },
   mounted() {
-    this.scrollToTop()    
+    this.scrollToTop()
   }
 }
 </script>
