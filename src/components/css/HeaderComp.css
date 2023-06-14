@@ -26,6 +26,10 @@
     justify-content: center;
     align-items: center;
   }  
+  
+  .logo-content-2-right{
+    width: 100%;
+  }
 
   .logo-content img {
     width: 100%;
@@ -36,8 +40,8 @@
   }
 
 
-  #menu-desplegar{
-    
+  .logo_carreras-menu-text-submenu{
+    border: 1px solid red;
   }
 
 /* Estilos adicionales según tus necesidades */
@@ -420,6 +424,18 @@
       width: 100% !important;
       margin-left: 0%;
     }
+
+    .logo-content-2{
+      width: 150%;
+    }
+
+    .logo_carreras-menu{
+      width: 70px;
+      height: 70px;
+    }
+    .logo_carreras-menu-text{
+      font-size: 1em;
+    }    
     
   }
   @media (max-width: 1000px) {

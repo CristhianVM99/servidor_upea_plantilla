@@ -11,6 +11,9 @@
   color: #fff;
   letter-spacing: 2px;
 }
+.title-comunicados-upea{
+  color: #fff;
+}
 
 .texto-limitado {
   overflow: hidden;
@@ -190,16 +193,14 @@
   width: 100%;
 }
 /*=================== SLIDE PRINCIPAL BACKGROUND ============== */
-.bg-principal-slide-content {
-  position: absolute;
-  width: 100%;
+.bg-principal-slide-content-second{
+  position: relative;
   height: 100vh;
 }
-
-.swiper .swiper-button-prev,
-.swiper .swiper-button-next {
-  z-index: 1000;
-  color: red !important;
+.bg-principal-slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;  
 }
 .bg-principal-slide {
 }
@@ -209,8 +210,143 @@
   width: 100%;
   height: 100vh;
 }
-.bg-principal-view {
+.principal-carreras-banner{
+  position: absolute !important;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: transparent !important;
 }
+
+.box-carreras-banner {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  z-index: 1;
+ }
+ 
+ .box-carreras-banner::before {
+  content: ' ';
+  position: absolute;
+  top: 0;
+  left: 50px;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+ }
+ 
+ .box-carreras-banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transform: skewX(15deg);
+  transition: 0.5s;
+  filter: blur(30px);
+ }
+ 
+ .box-carreras-banner:hover:before,
+ .box-carreras-banner:hover:after {
+  transform: skewX(0deg) scaleX(1.3);
+ }
+ 
+ .box-carreras-banner:before,
+ .box-carreras-banner:after {
+  background: linear-gradient(315deg, var(--main-color), var(--main-color-2))
+ }
+ 
+ .box-carreras-banner .span-carreras-banner {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+ }
+ 
+ .box-carreras-banner .span-carreras-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.1s;
+  animation: animate 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
+ }
+ 
+ .box-carreras-banner .span-carreras-banner::before {
+  top: -40px;
+  left: 40px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+ }
+ 
+ .box-carreras-banner .span-carreras-banner::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  animation-delay: -1s;
+ }
+ 
+ .box-carreras-banner .span-carreras-banner:after {
+  bottom: -40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  opacity: 1;
+ }
+ 
+ .box-carreras-banner .content-carreras-banner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1;
+  transform: 0.5s;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ .box-carreras-banner .content-carreras-banner h1 {
+  color: #fff;
+ } 
 /*==================== SLIDE PRINCIPAL UPEA ================= */
 .bg-principal-slide-content-main {
   position: relative;
@@ -761,6 +897,13 @@
   background: rgba(0, 0, 0, 0.7);
   border-radius: 20px;
 }
+
+.organigrama-carreras{
+  background: rgba(0, 0, 0, 0.7);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.05);
+}
 /*================ autoridades target ============== */
 
 .autoridades-content {
@@ -1079,10 +1222,9 @@
 .map-green {
   background-color: #00ca4e;
 }
-/*=========================== PRINCIPAL PAGINA =================== */
+/*=========================== PRINCIPAL PAGINA PARA LAS CARRERAS =================== */
 .box-p {
   position: relative;
-  width: 700px;
   height: 650px;
   display: flex;
   justify-content: center;
@@ -1190,8 +1332,7 @@
 
 .box-p .content-p {
   position: relative;
-  width: 690px;
-  height: 500px;
+  
   padding: 20px 40px;
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -1206,15 +1347,11 @@
   flex-direction: column;
 }
 
-.box-p .content-p h2 {
-  font-size: 20px;
-  color: #fff;
-  margin-bottom: 10px;
+.box-p .content-p h1 {
+  font-size: 5em;
+  text-align: center;
 }
-.box-p .content-p h5 {
-  color: #ffffff;
-  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.8);
-}
+
 
 /*======================== Animacion de Logo de la Universidad publica de el alto =========== */
 .logo-animacion {
@@ -1472,6 +1609,30 @@
   }
   .content-autoridades-upea::before{
     bottom: -50px;
+  }
+
+  .box-carreras-banner{
+    width: 100%;
+  }
+
+  /*============= Para la pagina de las carreras ============*/
+  .box-p {
+    width: 100%;
+    height: 400px;
+  }
+  .box-p .content-p{
+    width: 100%;
+  }
+  .box-p .content-p h1 {
+    text-align: center;
+    font-size: 60px;
+  }
+  .bg-principal-view{
+    
+  }
+  .sc-banner.banner-style3{
+    min-height: 100%;
+    margin-bottom: 150px;
   }
 }
 @media screen and (max-width: 300px) {

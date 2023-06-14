@@ -161,7 +161,9 @@
       </div>
     </div>
 
-    <div class="bg-principal-slide-content-second">
+    <div class="bg-principal-slide-content-second"
+    v-if="(this.carrera_id!=0)"
+    >
       <!-- ======================== PARA LAS CARRERAS =================-->
       <!-- Banner Section Start -->
       <swiper
@@ -170,9 +172,6 @@
         :autoplay="{
           delay: 2500,
           disableOnInteraction: false
-        }"
-        :pagination="{
-          clickable: false
         }"
         :modules="modules"
         class="mySwiper bg-principal-slide-content"
@@ -193,9 +192,9 @@
         </swiper-slide>
       </swiper>
       <!-- Banner Section End -->
-      <div
+      <!--<div
         id="sc-banner"
-        class="sc-banner banner-style3 upposition-relative bg-principal-view"
+        class="sc-banner banner-style3 bg-principal-view"
         v-if="this.carrera_id != 0"
       >
         <div class="container">
@@ -218,14 +217,7 @@
                   data-wow-duration="2500ms"
                 >
                   {{ Institucion.institucion_nombre }}
-                </h1>
-                <h5
-                  class="banner-des mb-35 wow fadeInUp inst-objetivos"
-                  data-wow-delay="300ms"
-                  data-wow-duration="3000ms"
-                  v-if="Institucion.institucion_objetivos != null"
-                  v-html="Institucion.institucion_objetivos"
-                ></h5>
+                </h1>                
               </div>
             </div>
             <div class="col-lg-6 hidden-md">
@@ -273,7 +265,83 @@
         <div class="animated-arrow-11 animated-arrow up-down-new">
           <img src="@/assets/images/banner/arrow-9.png" alt="" />
         </div>
+      </div>-->
+
+      <!-- Banner Section Start -->
+      <div id="sc-banner" class="sc-banner banner-bg3 position-relative principal-carreras-banner">
+        <div class="container">
+          <div class="row">
+            <div class="box-carreras-banner">
+              <span class="span-carreras-banner"></span>
+              <div class="content-carreras-banner">
+                <div class="col-lg-6">
+                  <div class="banner-content-carreras">
+                    <div
+                      class="sub-title wow position-relative mb-8 fadeInUp"
+                      data-wow-delay="300ms"
+                      data-wow-duration="2000ms"
+                    >
+                      {{ Institucion.institucion_iniciales }}
+                      <span class="heading-border-line"></span>
+                    </div>
+                    <h1
+                      class="banner-title mb-15 wow fadeInUp"
+                      data-wow-delay="300ms"
+                      data-wow-duration="2500ms"
+                    >
+                      {{ Institucion.institucion_nombre }}
+                    </h1>
+                  </div>
+                </div>                
+              </div>              
+            </div>
+            <div class="col-lg-6 hidden-md">
+                  <div class="banner-img hidden-sm">
+                    <img
+                      class="wow fadeInRight"
+                      src="@/assets/images/banner/banner-image3.png"
+                      alt="Banner Image"
+                      data-wow-delay="300ms"
+                      data-wow-duration="2000ms"
+                    />
+                  </div>
+                  <div class="animate-circle"></div>
+                </div>
+          </div>
+        </div>
+        <div class="animated-arrow-1 animated-arrow left-right-new">
+          <img src="assets/images/banner/arrow-1.png" alt="" />
+        </div>
+        <div class="animated-arrow-2 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-2.png" alt="" />
+        </div>
+
+        <div class="animated-arrow-3 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-3.png" alt="" />
+        </div>
+        <div class="animated-arrow-4 animated-arrow left-right-new">
+          <img src="assets/images/banner/arrow-4.png" alt="" />
+        </div>
+        <div class="animated-arrow-5 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-5.png" alt="" />
+        </div>
+        <div class="animated-arrow-7 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-6.png" alt="" />
+        </div>
+        <div class="animated-arrow-8 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-7.png" alt="" />
+        </div>
+        <div class="animated-arrow-9 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-8.png" alt="" />
+        </div>
+        <div class="animated-arrow-10 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-9.png" alt="" />
+        </div>
+        <div class="animated-arrow-11 animated-arrow up-down-new">
+          <img src="assets/images/banner/arrow-9.png" alt="" />
+        </div>
       </div>
+      <!-- Banner Section End -->
     </div>
 
     <!-- ===================== CARRERAS ==============-->
@@ -308,54 +376,6 @@
         </div>
       </swiper-slide>
     </swiper>
-
-    <!-- Categories Section Start -->
-    <div
-      id="sc-categories"
-      class="sc-categories style1 pt-115 md-pt-75 md-pb-50"
-      v-if="this.carrera_id == 1"
-    >
-      <div class="pr-40 pl-40">
-        <div class="sec-title mb-30 md-mb-10">
-          <div class="sub-title position-relative">
-            Carreras Universitarias <span class="heading-border-line"></span>
-          </div>
-          <h2 class="title mb-0">Carreras de la Universidad Pública de El Alto</h2>
-        </div>
-
-        <swiper
-          :spaceBetween="30"
-          :freeMode="true"
-          :modules="modules"
-          :navigation="true"
-          :breakpoints="swiperOptions.breakpointsCarrera"
-          class="mySwiper"
-          ref="swiper"
-          name="swiperCarreras"
-        >
-          <swiper-slide v-for="(carrera, id_carrera) in this.Carreras" :key="id_carrera">
-            <div class="box-carreras">
-              <span></span>
-              <div class="content-carreras">
-                <a
-                  :href="`http://${carrera.nombre_simple.toLowerCase()}.upea.edu.bo/`"
-                  target="_blank"
-                  v-for="(logo, logo_id) in carrera.logos"
-                  :key="logo_id"
-                >
-                  <img
-                    :src="url_api + '/Carrera/Logos/' + logo.logos_carrera"
-                    alt="img"
-                    class="carrera_logos"
-                  />
-                </a>
-              </div>
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
-    </div>
-    <!-- Categories Section End -->
 
     <!-- Blog Single Start -->
     <div class="sc-blog-single pt-120 pb-120 md-pt-80 md-pb-80">
@@ -400,22 +420,6 @@
           </div>
           <div class="col-lg-4 col-md-12 md-mt-60">
             <div class="widget-area">
-              <div class="widget-archives mb-50" v-if="this.carrera_id != 0">
-                <h3 class="widget-title">Links Externos</h3>
-                <ul>
-                  <li v-for="(link, id_link) of Links" :key="id_link" class="links_externos">
-                    <img
-                      :src="url_api + '/InstitucionUpea/LinksExternos/' + link.ei_imagen"
-                      alt=""
-                      class="links_externos_img"
-                    />
-                    <a :href="link.ei_link" target="_blank" class="links_externos_link">{{
-                      link.ei_nombre
-                    }}</a>
-                  </li>
-                </ul>
-              </div>
-
               <div class="recent-posts-widget mb-50">
                 <h3 class="widget-title">MISIÓN</h3>
                 <div class="show-featured">
@@ -440,12 +444,60 @@
     </div>
     <!-- Blog Single End -->
 
-    <!-- Blog Section Start -->   
-    <div id="sc-blog" class="sc-blog comunicados-bg main-home pb-110 pt-120 md-pb-70 md-pt-80">
+    <!-- Categories Section Start -->
+    <div
+      id="sc-categories"
+      class="sc-categories style1 pt-0 pb-110 md-pt-75 md-pb-50"
+      v-if="this.carrera_id != 0"
+    >
+      <div class="container">
+        <div class="sec-title mb-30 md-mb-10">
+          <div class="sub-title position-relative">
+            links de la carrera <span class="heading-border-line"></span>
+          </div>
+          <h2 class="title mb-0">Links Externos</h2>
+        </div>
+        <swiper
+          :slidesPerView="4"
+          :spaceBetween="30"
+          :breakpoints="swiperOptions.breakpointsComunicados"
+          :pagination="{
+            clickable: true
+          }"
+          :modules="modules"
+          class="mySwiper"
+        >
+          <swiper-slide v-for="(link, id_link) of Links" :key="id_link">
+            <div class="widget-archives mb-50">
+              <ul>
+                <li class="links_externos">
+                  <img
+                    :src="url_api + '/InstitucionUpea/LinksExternos/' + link.ei_imagen"
+                    alt=""
+                    class="links_externos_img"
+                  />
+                  <a :href="link.ei_link" target="_blank" class="links_externos_link">{{
+                    link.ei_nombre
+                  }}</a>
+                </li>
+              </ul>
+            </div>
+          </swiper-slide>
+        </swiper>
+      </div>
+    </div>
+    <!-- Categories Section End -->
+
+    <!-- Blog Section Start -->
+    <div
+      id="sc-blog"
+      class="sc-blog comunicados-bg main-home pb-110 pt-120 md-pb-70 md-pt-80"
+      v-if="this.carrera_id == 0"
+    >
       <div class="container">
         <div class="sec-title mb-60 text-center md-mb-30">
           <div class="sub-title primary">UPEA</div>
-          <h2 class="title mb-0">Comunicados Universitarios...</h2>
+          <h2 class="title mb-0 title-comunicados-upea">Comunicados Universitarios...</h2>
         </div>
         <swiper
           :slidesPerView="3"
@@ -461,103 +513,49 @@
             :key="id_pub"
             class="swiper-comunicados-carreras"
           >
-          <div class="col-lg-12 col-md-6 mb-30 loadcourse addcourse">
-            <div class="blog-item">
-              <div class="image-part content-carreras_publicaciones_img">
-                <img
-                  :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
-                  alt="img"
-                  class="carreras_publicaciones_img"
-                />
-              </div>
-              <div class="blog-content">
-                <ul class="blog-meta">
-                  <li><i class="fa fa-user-o"></i> {{ pub.publicaciones_tipo }}</li>
-                  <li><i class="fa fa-calendar"></i>{{ dmy( pub.publicaciones_fecha ) }}</li>
-                </ul>
-                <h3 class="title">{{ pub.publicaciones_titulo }}</h3>                
-                <div class="btn-btm">
-                  <div class="rs-view-btn">
-                    <router-link
-                    :to="{
-                            name: 'convocatoriadetalle',
-                            params: {
-                              tipo: 'publicaciones',
-                              idconv: encryptID(pub.publicaciones_id),
-
-                            }
-                          }"
-                    >Leer Mas</router-link>
+            <div class="col-lg-12 col-md-6 mb-30 loadcourse addcourse">
+              <div class="blog-item">
+                <div class="image-part content-carreras_publicaciones_img">
+                  <img
+                    :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
+                    alt="img"
+                    class="carreras_publicaciones_img"
+                  />
+                </div>
+                <div class="blog-content">
+                  <ul class="blog-meta">
+                    <li><i class="fa fa-user-o"></i> {{ pub.publicaciones_tipo }}</li>
+                    <li><i class="fa fa-calendar"></i>{{ dmy(pub.publicaciones_fecha) }}</li>
+                  </ul>
+                  <h3 class="title">{{ pub.publicaciones_titulo }}</h3>
+                  <div class="btn-btm">
+                    <div class="rs-view-btn">
+                      <router-link
+                        :to="{
+                          name: 'convocatoriadetalle',
+                          params: {
+                            tipo: 'publicaciones',
+                            idconv: encryptID(pub.publicaciones_id)
+                          }
+                        }"
+                        >Leer Mas</router-link
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>  
           </swiper-slide>
-        </swiper>        
+        </swiper>
       </div>
     </div>
-
-    <!-- Observacion -->
-    <div
-      id="sc-popular-courses"
-      class="sc-popular-courses gray-bg main-home pt-110 pb-110 md-pt-70 md-pb-70"
-      v-if="this.carrera_id == 3"
-    >
-      <div class="container">
-        <div class="sec-title text-center mb-55 md-mb-20">
-          <div class="sub-title">Carreras</div>
-          <h2 class="title mb-0">Comunicados..</h2>
-        </div>
-        <!-- Events Section Start -->
-        <div id="sc-event-section" class="sc-event-section md-pt-80 md-pb-70">
-          <div class="container">
-            <swiper :navigation="true" :modules="modules" class="mySwiper">
-              <swiper-slide v-for="(pub, id_pub) in PublicacionesCarreras" :key="id_pub">
-                <div class="row">
-                  <div class="col-lg-12">
-                    <div class="events-item mb-30 d-flex align-items-center">
-                      <div class="img-part">
-                        <img
-                          :src="url_api + '/Publicaciones/' + pub.publicaciones_imagen"
-                          alt="img"
-                          class="carreras_publicaciones_img"
-                        />
-                        <div class="event-price">
-                          <span class="price">publicación</span>
-                        </div>
-                      </div>
-                      <div class="">
-                        <h3 class="title">{{ pub.publicaciones_titulo }}</h3>
-                        <div class="des">
-                          Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                        </div>
-                        <ul class="meta-part">
-                          <li class="event-date">
-                            <i class="fa fa-calendar-check-o"></i>{{ dmy(pub.publicaciones_fecha) }}
-                          </li>
-                        </ul>
-                        <!--<div class="bottom-part d-flex align-items-center justify-content-between">
-                      <div class="address"><i class="fa fa-map-o"></i> New Margania</div>
-                      <div class="event-join">
-                        <a href="#">Join Event</a>
-                      </div>
-                    </div>-->
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </swiper-slide>
-            </swiper>
-          </div>
-        </div>
-        <!-- Events Section End -->
-      </div>
-    </div>
-    <!-- Course Section End -->
 
     <!-- About Section Start -->
-    <div id="sc-about" class="sc-about about-style2 pt-120 pb-120 md-pt-80 md-pb-70">
+    <div
+      id="sc-about"
+      class="sc-about about-style2 pt-120 pb-120 md-pt-80 md-pb-70"
+      v-if="this.carrera_id == 0"
+    >
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-5">
@@ -939,89 +937,7 @@
 
     <!-- Team Section Start -->
     <div
-      class="sc-team team-style-1 gray-bg arrow-animation-1 position-relative pt-110 pb-90 md-pt-70 md-pb-50"
-      v-if="this.carrera_id != 0"
-    >
-      <div class="pt-60">
-        <div class="sec-title mb-30 text-center md-mb-10">
-          <div class="sub-title primary">Autoridades<span class="heading-border-line"></span></div>
-          <h2 class="title mb-0">Nuestras Autoridades</h2>
-        </div>
-        <swiper
-          :centered-slides="true"
-          :space-between="50"
-          class="autoridades-content"
-          :navigation="true"
-          :modules="modules"
-          :breakpoints="swiperOptions.breakpointsAutoridades"
-        >
-          <swiper-slide v-for="(autoridad, id_aut) of Institucion.autoridad" :key="id_aut">
-            <div class="col-lg-6 team-inner-item autoridades-target">
-              <div class="team-wrap">
-                <div class="team-img">
-                  <img
-                    :src="url_api + '/InstitucionUpea/Autoridad/' + autoridad.foto_autoridad"
-                    alt="img"
-                    class="img_swiper"
-                  />
-                  <ul class="team-social wrapper">
-                    <li class="icon facebook">
-                      <a :href="autoridad.facebook_autoridad" target="_blank" class="social-icon">
-                        <span class="tooltip">Facebook</span>
-                        <i class="fa fa-facebook"></i>
-                      </a>
-                    </li>
-                    <li class="icon whatsapp">
-                      <a
-                        :href="'https://wa.me/+' + autoridad.celular_autoridad"
-                        target="_blank"
-                        class="social-icon"
-                      >
-                        <span class="tooltip">WhatsApp</span>
-                        <i class="fa fa-whatsapp"></i>
-                      </a>
-                    </li>
-                    <li class="icon twitter">
-                      <a :href="autoridad.twiter_autoridad" target="_blank" class="social-icon">
-                        <span class="tooltip">Twitter</span>
-                        <i class="fa fa-twitter"></i>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="team-item-text">
-                  <div class="team-details">
-                    <h3 class="team-name">
-                      <h4>{{ autoridad.nombre_autoridad }}</h4>
-                    </h3>
-                    <span class="team-title">{{ autoridad.cargo_autoridad }}</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </swiper-slide>
-        </swiper>
-      </div>
-      <div class="animated-arrow-1 animated-arrow left-right-new">
-        <img src="@/assets/images/arrow-5.png" alt="" />
-      </div>
-      <div class="animated-arrow-2 animated-arrow up-down-new">
-        <img src="@/assets/images/arrow-2.png" alt="" />
-      </div>
-
-      <div class="animated-arrow-3 animated-arrow up-down-new">
-        <img src="@/assets/images/arrow-4.png" alt="" />
-      </div>
-      <div class="animated-arrow-4 animated-arrow left-right-new">
-        <img src="@/assets/images/arrow-3.png" alt="" />
-      </div>
-    </div>
-    <!-- Team Section End -->
-
-    <!-- Team Section Start -->
-    <div
       class="sc-team team-style-1 gray-bg arrow-animation-1 position-relative pt-110 pb-90 md-pt-70 md-pb-50 content-autoridades-upea"
-      v-if="this.carrera_id == 0"
     >
       <div class="">
         <div class="sec-title mb-30 text-center md-mb-10">
@@ -1104,7 +1020,7 @@
     <!-- About Instructor Section Start -->
     <div
       id="sc-about-instructor"
-      class="sc-about-instructor pt-80 pb-90 md-pt-50 md-pb-70 organigrama"
+      class="sc-about-instructor pt-80 pb-90 md-pt-50 md-pb-70 organigrama organigrama-2"
       v-if="carrera_id != 0"
     >
       <div class="container">
@@ -1123,7 +1039,7 @@
               </a>
             </div>
           </div>
-          <div class="col-lg-7 pl-85 md-pl-15">
+          <div class="col-lg-7 pl-85 md-pl-15 organigrama-carreras">
             <div class="sec-title mb-20">
               <div class="sub-title position-relative">
                 institucion <span class="heading-border-line"></span>
@@ -1175,6 +1091,7 @@
     <div
       id="sc-event-section"
       class="sc-event-section pt-120 pb-110 md-pt-80 md-pb-70 eventos-container"
+      v-if="this.carrera_id == 0"
     >
       <div class="container">
         <div class="row">
@@ -1312,6 +1229,10 @@
         <swiper
           :slides-per-view="3"
           :space-between="50"
+          :breakpoints="swiperOptions.breakpointsComunicados"
+          :pagination="{
+            clickable: true
+          }"
           v-if="
             Object.keys(latestConvocatoria).length +
               Object.keys(latestComunicado).length +
@@ -1599,6 +1520,10 @@
         <swiper
           :slides-per-view="3"
           :space-between="50"
+          :breakpoints="swiperOptions.breakpointsComunicados"
+          :pagination="{
+            clickable: true
+          }"
           v-if="Object.keys(latestCurso).length + Object.keys(latestSeminario).length > 0"
         >
           <!-- CURSOS -->
@@ -1746,7 +1671,11 @@
   <!-- Map Start -->
 
   <!-- Blog Section Start -->
-  <div id="sc-blog" class="sc-blog main-home pb-200 pt-110 md-pt-70 md-pb-160">
+  <div
+    id="sc-blog"
+    class="sc-blog main-home pb-60 pt-110 md-pt-70 md-pb-160"
+    v-if="this.carrera_id == 0"
+  >
     <div class="container">
       <div class="sec-title mb-60 text-center md-mb-30">
         <div class="sub-title primary">UPEA</div>
@@ -1924,7 +1853,7 @@ export default {
           },
           770: {
             slidesPerView: 2,
-            spaceBetween: 10
+            spaceBetween: 20
           },
           1366: {
             slidesPerView: 3,

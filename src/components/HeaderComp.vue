@@ -63,7 +63,7 @@
                       alt=""
                       class="logo_carreras-menu"
                     />
-                    <span class="logo_carreras-menu-text">{{
+                    <span class="logo_carreras-menu-text-submenu">{{
                       Institucion.institucion_nombre
                     }}</span>
                   </router-link>
@@ -450,7 +450,7 @@
                       alt=""
                       class="logo_carreras-menu"
                     />
-                    <span class="logo_carreras-menu-text">{{
+                    <span class="logo_carreras-menu-text-rigth">{{
                       Institucion.institucion_nombre
                     }}</span>
                   </router-link>
@@ -780,7 +780,7 @@
                         </ul>
                       </li>
 
-                      <li v-if="this.carrera_id != 0">
+                      <li class="menu-item-has-children-right" v-if="this.carrera_id != 0">
                         <router-link :to="{ name: 'contacto' }">Contacto</router-link>
                       </li>
                     </ul>
