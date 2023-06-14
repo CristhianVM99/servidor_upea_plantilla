@@ -310,35 +310,35 @@
           </div>
         </div>
         <div class="animated-arrow-1 animated-arrow left-right-new">
-          <img src="assets/images/banner/arrow-1.png" alt="" />
+          <img src="@/assets/images/banner/arrow-1.png" alt="" />
         </div>
         <div class="animated-arrow-2 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-2.png" alt="" />
+          <img src="@/assets/images/banner/arrow-2.png" alt="" />
         </div>
 
         <div class="animated-arrow-3 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-3.png" alt="" />
+          <img src="@/assets/images/banner/arrow-3.png" alt="" />
         </div>
         <div class="animated-arrow-4 animated-arrow left-right-new">
-          <img src="assets/images/banner/arrow-4.png" alt="" />
+          <img src="@/assets/images/banner/arrow-4.png" alt="" />
         </div>
         <div class="animated-arrow-5 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-5.png" alt="" />
+          <img src="@/assets/images/banner/arrow-5.png" alt="" />
         </div>
         <div class="animated-arrow-7 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-6.png" alt="" />
+          <img src="@/assets/images/banner/arrow-6.png" alt="" />
         </div>
         <div class="animated-arrow-8 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-7.png" alt="" />
+          <img src="@/assets/images/banner/arrow-7.png" alt="" />
         </div>
         <div class="animated-arrow-9 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-8.png" alt="" />
+          <img src="@/assets/images/banner/arrow-8.png" alt="" />
         </div>
         <div class="animated-arrow-10 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-9.png" alt="" />
+          <img src="@/assets/images/banner/arrow-9.png" alt="" />
         </div>
         <div class="animated-arrow-11 animated-arrow up-down-new">
-          <img src="assets/images/banner/arrow-9.png" alt="" />
+          <img src="@/assets/images/banner/arrow-9.png" alt="" />
         </div>
       </div>
       <!-- Banner Section End -->
