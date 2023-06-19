@@ -126,38 +126,7 @@
               <div class="animate-circle"></div>
             </div>
           </div>
-        </div>
-        <div class="animated-arrow-1 animated-arrow left-right-new">
-          <img src="@/assets/images/banner/arrow-1.png" alt="" />
-        </div>
-        <div class="animated-arrow-2 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-2.png" alt="" />
-        </div>
-
-        <div class="animated-arrow-3 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-3.png" alt="" />
-        </div>
-        <div class="animated-arrow-4 animated-arrow left-right-new">
-          <img src="@/assets/images/banner/arrow-4.png" alt="" />
-        </div>
-        <div class="animated-arrow-5 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-5.png" alt="" />
-        </div>
-        <div class="animated-arrow-7 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-6.png" alt="" />
-        </div>
-        <div class="animated-arrow-8 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-7.png" alt="" />
-        </div>
-        <div class="animated-arrow-9 animated-arHistoria administracion de empresasrow up-down-new">
-          <img src="@/assets/images/banner/arrow-8.png" alt="" />
-        </div>
-        <div class="animated-arrow-10 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-9.png" alt="" />
-        </div>
-        <div class="animated-arrow-11 animated-arrow up-down-new">
-          <img src="@/assets/images/banner/arrow-9.png" alt="" />
-        </div>
+        </div>      
       </div>
     </div>
 
@@ -359,10 +328,11 @@
       <swiper-slide v-for="(carrera, id_carrera) in this.Carreras" :key="id_carrera">
         <div class="box-carreras">
           <span></span>
-          <div class="content-carreras">
+          <div class="content-carreras"          
+          >
             <a
-              :href="`http://${carrera.nombre_simple.toLowerCase()}.upea.edu.bo/`"
-              target="_blank"
+              :href="getLinkCarrera(carrera.nombre_simple)"
+              target="_blank"              
               v-for="(logo, logo_id) in carrera.logos"
               :key="logo_id"
             >
@@ -1901,7 +1871,153 @@ export default {
       opacidadbg: 1,
       coloricon: '#fff',
       iframeHtml:
-        '<iframe frameborder="0" src="//www.youtube.com/embed/RcsOSIghvRk" width="640" height="360" class="note-video-clip"></iframe>'
+        '<iframe frameborder="0" src="//www.youtube.com/embed/RcsOSIghvRk" width="640" height="360" class="note-video-clip"></iframe>',
+      linksCarreras:[
+        {
+          carrera: 'SISTEMAS',
+          link: 'https://sistemas.upea.bo/paginaInicio'
+        },
+        {
+          carrera:'AGRONOMÍA',
+          link: 'https://agronomia.upea.bo/upea/1bwWgdqBKdnOLibXZExG725pL'
+        },
+        {
+          carrera: 'ARQUITECTURA',
+          link: 'http://www.arquitectura.upea.edu.bo/l'
+        },
+        {
+          carrera: 'EDUCACIÓN',
+          link: 'https://educacionparvularia.upea.bo/'
+        },
+        {
+          carrera: 'DESARROLLO',
+          link: 'https://inscripcionesdesarrollo.upea.bo/'
+        },
+        {
+          carrera: 'COMUNICACIÓN',
+          link: 'https://comunicacion.upea.bo/'
+        },
+        {
+          carrera: 'CONTADURÍA',
+          link: 'https://virtualcontaduria.upea.bo/'
+        },
+        {
+          carrera: 'DERECHO',
+          link: 'https://virtualderecho.upea.bo/'
+        },
+        {
+          carrera: 'ENFERMERÍA',
+          link: 'https://virtualenfermeria.upea.bo/'
+        },
+        {
+          carrera: 'HISTORIA',
+          link: 'https://inscripcioneshistoria.upea.bo/'
+        },
+        {
+          carrera: 'CIVIL',
+          link: 'https://ingenieriacivil.upea.bo/paginaInicio'
+        },
+        {
+          carrera: 'PRODUCCIÓN',
+          link: 'https://virtualproduccion.upea.bo/'
+        },
+        {
+          carrera: 'IDIOMAS',
+          link: 'https://virtuallinguistica.upea.bo/'
+        },
+        {
+          carrera: 'MEDICINA',
+          link: 'https://virtualmedicina.upea.bo/'
+        },
+        {
+          carrera: 'SOCIOLOGÍA',
+          link: 'https://virtualsociologia.upea.bo/'
+        },
+        {
+          carrera: 'TRABAJO',
+          link: 'https://inscripcionestrabajosocial.upea.bo/'
+        },
+        {
+          carrera: 'VETERINARIA',
+          link: 'http://www.veterinaria.upea.edu.bo/l'
+        },
+        {
+          carrera: 'ECONOMÍA',
+          link: 'https://economia.upea.bo/upea/ygrxaP5LklJgwUbQvJOnGX1Ql'
+        },
+        {
+          carrera: 'PETROQUÍMICA',
+          link: 'https://virtualpetroquimica.upea.bo/'
+        },
+        {
+          carrera: 'ADMINISTRACIÓN',
+          link: 'https://virtualadministracion.upea.bo/'
+        },
+        {
+          carrera: 'ODONTOLOGÍA',
+          link: 'https://inscripcionesodontologia.upea.bo/'
+        },
+        {
+          carrera: 'ELECTRÓNICA',
+          link: 'https://virtualelectronica.upea.bo/'
+        },
+        {
+          carrera: 'PLASTICAS',
+          link: 'https://virtualartesplasticas.upea.bo/'
+        },
+        {
+          carrera: 'POLITICAS',
+          link: 'https://virtualpoliticas.upea.bo/'
+        },
+        {
+          carrera: 'TEXTIL',
+          link: 'https://virtualtextil.upea.bo/'
+        },
+        {
+          carrera: 'PARVULARIA',
+          link: 'https://educacionparvularia.upea.bo/'
+        },
+        {
+          carrera: 'ELECTRICA',
+          link: 'https://inscripcioneselectrica.upea.bo/'
+        },
+        {
+          carrera: 'AUTOTRONICA',
+          link: 'https://virtualautotronica.upea.bo/'
+        },
+        {
+          carrera: 'PECUARIA',
+          link: 'http://www.izip.upea.edu.bo/l'
+        },
+        {
+          carrera: 'AMBIENTAL',
+          link: 'https://inscripcionesambiental.upea.bo/'
+        },
+        {
+          carrera: 'DIETETICA',
+          link: 'https://inscripciones.upea.bo/'
+        },
+        {
+          carrera: 'COMERCIO',
+          link: 'https://virtualcomercio.upea.bo/'
+        },
+        {
+          carrera: 'TURISTICA',
+          link: 'http://www.gth.upea.edu.bo/l'
+        },
+        {
+          carrera: 'PSICOLOGIA',
+          link: 'https://virtualpsicologia.upea.bo/'
+        },
+        {
+          carrera: 'CIENCIAS FISICAS',
+          link: 'https://virtualfisicas.upea.bo/'
+        },
+        {
+          carrera: 'PSICOMOTRICIDAD Y DEPORTES',
+          link: 'https://inscripcionespsicomotricidad.upea.bo/'
+        },        
+      ]
     }
   },
   computed: {
@@ -1926,6 +2042,15 @@ export default {
     }
   },
   methods: {
+    getLinkCarrera(links){
+      let link = ""
+      this.linksCarreras.forEach(element =>{        
+        if(element.carrera == links){
+          link = element.link
+        }
+      })
+      return link
+    },
     encryptID(id) {
       const encryptionKey = 'UniversidadPublicaDeElAlto' // Cambia esto por tu clave de encriptación
       const ciphertext = CryptoJS.AES.encrypt(id.toString(), encryptionKey).toString()
