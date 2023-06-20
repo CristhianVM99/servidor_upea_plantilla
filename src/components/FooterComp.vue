@@ -36,7 +36,7 @@
               <h4 class="social-title white-color">Siguenos en:</h4>
               <ul class="footer-social">
                 <li>
-                  <a :href="Institucion.institucion_facebook" target="_blank"
+                  <a href="https://www.facebook.com/groups/261008431826559" target="_blank"
                     ><i class="fa fa-facebook"></i
                   ></a>
                 </li>
@@ -89,12 +89,12 @@
               Unidades Administrativas <br>y<br> Auditoria Interna
             </h4>
             <ul class="widget-menu">              
-              <li><a href="https://titulos.upea.bo/">Unidad de Titulos y Diplomas</a></li>
-              <li><a href="https://vicerrectorado.upea.bo/l">Vicerrectorado</a></li>
-              <li><a href="https://www.sie.upea.bo/l">Unidad de Sistemas de Informacion y Estadistica</a></li>
-              <li><a href="https://registrosadmisiones.upea.bo/">Registros y Admiciones</a></li>
-              <li><a href="https://solid.upea.bo/">Direccion de Interaccion Social y Cultura</a></li>
-              <li><a href="https://www.upea.bo/u/xqOXL3NKgwqJF17iNKEQraWzP" target="_blank">Direccion de Auditoria Interna</a></li>
+              <li><a target="_blank" href="https://titulos.upea.bo/">Unidad de Titulos y Diplomas</a></li>
+              <li><a target="_blank" href="https://vicerrectorado.upea.bo/l">Vicerrectorado</a></li>
+              <li><a target="_blank" href="https://www.sie.upea.bo/l">Unidad de Sistemas de Informacion y Estadistica</a></li>
+              <li><a target="_blank" href="https://registrosadmisiones.upea.bo/">Registros y Admiciones</a></li>
+              <li><a target="_blank" href="https://solid.upea.bo/">Direccion de Interaccion Social y Cultura</a></li>
+              <li><a target="_blank" href="https://www.upea.bo/u/xqOXL3NKgwqJF17iNKEQraWzP">Direccion de Auditoria Interna</a></li>
 
               <li v-for="(link, id_conv) in MenuCursos" :key="id_conv">
                 <router-link
@@ -185,23 +185,23 @@
             <ul class="address-widget pr-40">
               <li>
                 <i class="flaticon flaticon-call"></i>
-                <a href="#">{{ Institucion.institucion_celular1 }}</a>
+                <p>{{ Institucion.institucion_celular1 }}</p>
               </li>
               <li>
                 <i class="flaticon flaticon-call"></i>
-                <a href="#">{{ Institucion.institucion_celular2 }}</a>
+                <p>{{ Institucion.institucion_celular2 }}</p>
               </li>
               <li>
                 <i class="flaticon flaticon-mail"></i>
-                <a href="#">{{ Institucion.institucion_correo1 }}</a>
+                <p>{{ Institucion.institucion_correo1 }}</p>
               </li>
               <li>
                 <i class="flaticon flaticon-mail"></i>
-                <a href="#">{{ Institucion.institucion_correo2 }}</a>
+                <p>{{ Institucion.institucion_correo2 }}</p>
               </li>
               <li>
                 <i class="flaticon flaticon-maps-and-flags"></i>
-                <a href="#">{{ Institucion.institucion_direccion }}</a>
+                <p>{{ Institucion.institucion_direccion }}</p>
               </li>
             </ul>
           </div>
@@ -219,7 +219,7 @@
           <div class="col-md-6 text-end">
             <ul class="copyright-menu">
               <img src="/upea.png" width="100" alt="sie" />
-              <li><a href="https://www.facebook.com/profile.php?id=100008367045999">CRISMAS</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=100008367045999">CVM</a></li>
             </ul>
           </div>
         </div>

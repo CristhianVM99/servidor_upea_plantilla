@@ -677,8 +677,12 @@ export default {
     //optenemos todos los registros de las videos de la tipo this.tipo
     async getVideo(id) {
       try {
-        const response = await Services.getVideo(id)
-        this.Video = response.data.Descripcion
+        const response = await Services.getVideos()
+        response.data.forEach((conv) => {
+          if(conv.video_id == id){
+            this.Video = conv  
+          }
+        })
       } catch (e) {
         console.log(e)
       }

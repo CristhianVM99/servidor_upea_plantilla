@@ -61,7 +61,7 @@
                 <ul class="wrapper-social">
                   <li class="icon-social facebook-social">
                     <span class="tooltip-social">Facebook</span>
-                    <a :href="Institucion.institucion_facebook" target="_blank">
+                    <a href="https://www.facebook.com/groups/261008431826559" target="_blank">
                       <span><i class="fa fa-facebook"></i></span>
                     </a>
                   </li>
@@ -933,7 +933,7 @@
                     alt="img"
                     class="img_swiper"
                   />
-                  <ul class="team-social wrapper">
+                  <ul v-if="false" class="team-social wrapper">
                     <li class="icon facebook">
                       <a :href="autoridad.facebook_autoridad" target="_blank" class="social-icon">
                         <span class="tooltip">Facebook</span>
@@ -2218,7 +2218,9 @@ export default {
         const response = await Services.getGacetaAll()
         this.Gacetas = response.data
         this.Gacetas.forEach((gaceta) => {
-          this.Gaceta = gaceta
+          if(gaceta.gaceta_id== 10){
+            this.Gaceta = gaceta
+          }          
         })
       } catch (e) {
         console.log(e)
