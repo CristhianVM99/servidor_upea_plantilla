@@ -15,12 +15,12 @@
   <div class="card__content-cate">
     <div class="widget-area">
     <div class="search-widget mb-50" v-if="(this.carrera_id!=0)">
-      <div class="search-wrap">
+      <!--<div class="search-wrap">
         <input type="search" placeholder="Buscar..." name="" class="search-input" />
         <button type="submit" value="Search">
           <i class="flaticon flaticon-magnifying-glass"></i>
         </button>
-      </div>
+      </div>-->
     </div>
     <div class="widget-archives mb-50">
       <h3 class="widget-title">Categories</h3>
