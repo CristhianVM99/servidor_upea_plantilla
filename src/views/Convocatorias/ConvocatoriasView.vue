@@ -169,7 +169,6 @@
                           </div>
                         </div>
                       </div>
-                      <sin-registros></sin-registros>
                     </swiper-slide>
                   </swiper>
                   <!-- Servicios -->
